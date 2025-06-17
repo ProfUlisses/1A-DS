@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intel - Suporte</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f0f4f9;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: white !important;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand strong {
+      font-size: 1.8rem;
+      color: #0071c5;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: #555 !important;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #0071c5 !important;
+    }
+
+    header {
+      padding: 11rem 0 5rem;
+      text-align: center;
+      background: linear-gradient(120deg, #005892, #0084d6);
+      color: #fff;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .faq-item h5 {
+      cursor: pointer;
+    }
+
+    footer {
+      background: #002d5b;
+      color: #fff;
+      padding: 3rem 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    footer a:hover {
+      color: #99cfff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><strong>Intel</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produtos.html">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="historico.html">Histórico</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="suporte.html">Suporte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.html">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="container">
+      <h1 class="display-5 fw-bold">Central de Suporte</h1>
+      <p class="lead mb-0">Encontre respostas, downloads e assistência especializada.</p>
+    </div>
+  </header>
+
+  <!-- ==================== FAQ ==================== -->
+  <section>
+    <div class="container">
+      <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+              aria-expanded="true" aria-controls="collapse1">
+              Como atualizar drivers Intel?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Visite o Intel® Driver & Support Assistant, faça o download da ferramenta e siga as instruções para
+              detectar e instalar as atualizações necessárias.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
+              aria-expanded="false" aria-controls="collapse2">
+              Onde obter garantia e RMA?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Registre seu produto em support.intel.com, abra um ticket e siga as instruções para processar troca
+              (RMA) ou suporte de garantia.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
+              aria-expanded="false" aria-controls="collapse3">
+              Quais são os requisitos para Raptor Lake?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Processadores Intel® Core™ 14ª Geração (Raptor Lake Refresh) usam soquete LGA 1700, exigem BIOS compatível
+              em chipsets série 600/700 e recomendam DDR5 para desempenho ideal.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container text-center">
+      <p class="mb-2 fw-semibold">© 2025 Intel Corporation</p>
+      <div>
+        <a href="https://www.intel.com" target="_blank"><i class="bi bi-globe2"></i> Site</a>
+        <a href="https://twitter.com/intel" target="_blank"><i class="bi bi-twitter"></i> Twitter</a>
+        <a href="https://linkedin.com/company/intel" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

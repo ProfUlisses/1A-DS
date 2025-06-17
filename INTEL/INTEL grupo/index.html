@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intel – Home</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --azul-prim:#0071c5;
+      --azul-grad-a:#005892;
+      --azul-grad-b:#0084d6;
+      --vidro-bg:rgba(255,255,255,.15);
+    }
+    body{font-family:'Montserrat',sans-serif;background:#f0f4f9;scroll-behavior:smooth;}
+
+    #intro{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(120deg,var(--azul-grad-a),var(--azul-grad-b));
+      overflow:hidden;z-index:9999;transition:opacity 1s,visibility 1s}
+    #intro.hide{opacity:0;visibility:hidden}
+    .spin{animation:spin 1.8s ease-out forwards}
+    #intro h1{font-size:clamp(5rem,11vw,9rem);font-weight:700;letter-spacing:.15em;
+      background:linear-gradient(270deg,#00d2ff,#3a7bd5,#1e3c72,#2a5298,#00d2ff);background-size:800% 800%;
+      -webkit-background-clip:text;color:transparent;text-shadow:0 0 14px rgba(0,183,255,.85),0 0 28px rgba(0,183,255,.55);
+      animation:gradientShift 4s linear infinite,pulse 2.5s ease 1.8s infinite}
+
+    .chip,.dot,.trace{position:absolute;pointer-events:none}
+    .chip{width:42px;height:30px;border-radius:4px;background:rgba(255,255,255,.15);
+      border:2px solid rgba(255,255,255,.35);box-shadow:0 0 8px rgba(0,183,255,.4);animation:float 7s ease infinite}
+     
+      .chip1{top:12%;left:22%;animation-delay:.2s}
+      .chip2{top:28%;left:70%;animation-delay:1.1s}
+      .chip3{top:58%;left:38%;animation-delay:2s}
+      .chip4{top:80%;left:80%;animation-delay:2.8s}
+      .chip5{top:46%;left:10%;animation-delay:1.5s}
+      .chip6{top:68%;left:60%;animation-delay:.5s}
+     
+      .chip7 {top:18%;left:85%;animation-delay:1.9s}
+      .chip8 {top:35%;left:5%; animation-delay:2.6s}
+      .chip9 {top:50%;left:75%;animation-delay:.4s}
+      .chip10{top:66%;left:27%;animation-delay:2.2s}
+      .chip11{top:82%;left:48%;animation-delay:1.3s}
+      .chip12{top:10%;left:40%;animation-delay:.4s}
+
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(0,219,255,.8);
+      box-shadow:0 0 6px rgba(0,219,255,.8);animation:blink 3s linear infinite}
+    .dot1{top:25%;left:50%;animation-delay:.5s}.dot2{top:75%;left:30%;animation-delay:1.3s}.dot3{top:15%;left:78%;animation-delay:2.1s}
+
+    .trace{width:90px;height:3px;border-radius:2px;background:rgba(255,255,255,.25);
+      box-shadow:0 0 6px rgba(0,183,255,.35);animation:slide 8s linear infinite}
+    .trace1{top:20%;left:-120px}.trace2{top:55%;left:-180px;animation-delay:2s}.trace3{top:85%;left:-150px;animation-delay:4s}
+
+    @keyframes spin{0%{transform:rotateY(0) scale(.9)}100%{transform:rotateY(360deg) scale(1)}}
+    @keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+    @keyframes blink{0%,100%{opacity:.8}50%{opacity:.2}}
+    @keyframes slide{to{transform:translateX(120vw)}}
+
+
+    .navbar{transition:padding .25s,box-shadow .25s;background:#fff!important}
+    .navbar.shrink{padding-block:.45rem;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .navbar-brand strong{font-size:1.8rem;color:var(--azul-prim)}
+    .nav-link{font-weight:600;color:#555!important;transition:color .3s}.nav-link:hover,.nav-link.active{color:var(--azul-prim)!important}
+
+    #hero{position:relative;color:#fff;padding:14rem 0 11rem;
+      background:radial-gradient(circle at 30% 30%,#00b4ff 0%,#005892 45%,#002545 100%),
+                 url("https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1500&q=80") center/cover}
+    #hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
+    #hero .content{position:relative;z-index:1;text-align:center}
+    #hero h1{font-size:3.3rem;font-weight:700}
+    #hero p{font-size:1.25rem;max-width:660px;margin:1.2rem auto 2.8rem}
+    .btn-custom{border-radius:50px;font-weight:600;padding:.85rem 2.4rem}
+    .btn-light-ghost{background:transparent;border:2px solid #fff;color:#fff}.btn-light-ghost:hover{background:#fff;color:var(--azul-prim)}
+
+    section{padding:6rem 0}
+    section h2{text-align:center;font-weight:700;margin-bottom:3rem;color:#023e7d}
+
+    .glass-card{backdrop-filter:blur(10px);background:var(--vidro-bg);border:1px solid rgba(255,255,255,.35);
+      border-radius:16px;padding:2.4rem 1.8rem;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08);transition:.3s}
+    .glass-card:hover{transform:translateY(-6px)}.glass-card i{font-size:2.8rem;margin-bottom:1rem;color:var(--azul-prim)}
+
+ 
+    .tech-icon{font-size:3rem;color:#fff;background:var(--azul-prim);width:72px;height:72px;display:flex;align-items:center;justify-content:center;border-radius:50%;margin:auto 0 1rem}
+
+   
+    #destaques .prod-card{border:none;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.08);transition:.25s}
+    #destaques .prod-card:hover{transform:scale(1.03)}#destaques .prod-card img{height:180px;object-fit:cover}
+    #destaques .tag{display:inline-block;font-size:.75rem;font-weight:700;background:var(--azul-prim);color:#fff;padding:.25rem .6rem;border-radius:50px}
+    .btn-details{border-radius:50px;font-weight:600}
+
+    
+    #logos .logo-item{opacity:.5;transition:.3s;filter:grayscale(1)}#logos .logo-item:hover{opacity:1;filter:none}
+
+  
+    .blog-card{border:none;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;transition:.25s}
+    .blog-card:hover{transform:translateY(-6px)}.blog-card img{height:180px;object-fit:cover}
+
+
+    .badge-award{background:#fff;border:2px solid var(--azul-prim);border-radius:12px;padding:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+
+ 
+    .parallax{position:relative;background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkivdUxGeab3MBMKqJ9CDaVDCpAO6jCB3xwA&s") center/cover fixed;
+      padding:8rem 0;color:#fff;text-align:center}
+    .parallax::after{content:'';position:absolute;inset:0;background:#001f3f;opacity:.55}
+    .parallax h3{position:relative;z-index:1;font-size:2.2rem;font-weight:700;margin-bottom:.8rem}
+
+
+    .map-container{border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+
+    
+    #topBtn{position:fixed;right:22px;bottom:26px;z-index:99;display:none}
+  </style>
+</head>
+<body>
+
+
+<div id="intro">
+  <!-- chips -->
+  <span class="chip chip1"></span><span class="chip chip2"></span><span class="chip chip3"></span>
+  <span class="chip chip4"></span><span class="chip chip5"></span><span class="chip chip6"></span>
+  <span class="chip chip7"></span><span class="chip chip8"></span><span class="chip chip9"></span>
+  <span class="chip chip10"></span><span class="chip chip11"></span><span class="chip chip12"></span>
+ 
+  <span class="dot dot1"></span><span class="dot dot2"></span><span class="dot dot3"></span>
+  <span class="trace trace1"></span><span class="trace trace2"></span><span class="trace trace3"></span>
+
+  <div class="spin"><h1>Intel</h1></div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg py-3 fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><strong>Intel</strong></a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="historico.html">Histórico</a></li>
+        <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<header id="hero">
+  <div class="content container">
+    <h1>Potenciando o Futuro com a Intel</h1>
+    <p>Processadores de ponta, inovação constante e soluções que transformam a maneira como vivemos, trabalhamos e criamos.</p>
+    <a href="#destaques" class="btn btn-light btn-custom me-2">Ver Destaques</a>
+    <a href="produtos.html" class="btn btn-light-ghost btn-custom">Catálogo Completo</a>
+  </div>
+</header>
+
+
+<section>
+  <div class="container">
+    <h2>Por que escolher a Intel?</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="glass-card"><i class="bi bi-rocket-takeoff-fill"></i><h5>Desempenho Incomparável</h5><p>Da nuvem ao PC gamer, entregamos potência para qualquer desafio.</p></div></div>
+      <div class="col-md-4"><div class="glass-card"><i class="bi bi-lightbulb-fill"></i><h5>Inovação Contínua</h5><p>Bilhões em P&amp;D para antecipar as necessidades do futuro.</p></div></div>
+      <div class="col-md-4"><div class="glass-card"><i class="bi bi-globe-americas"></i><h5>Impacto Global</h5><p>Operações em 170+ países, capacitando criadores em escala mundial.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:#fff;">
+  <div class="container">
+    <h2>Tecnologias-chave 2025</h2>
+    <div class="row text-center gy-4">
+      <div class="col-md-4">
+        <div class="tech-icon"><i class="bi bi-cpu"></i></div>
+        <h6 class="fw-bold">IA On-Chip</h6><p class="small">NPUs dedicadas levam inferência para notebooks, servidores e borda.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="tech-icon"><i class="bi bi-layers"></i></div>
+        <h6 class="fw-bold">3D Stacking</h6><p class="small">Foveros e EMIB permitem chips modulares mais eficientes.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="tech-icon"><i class="bi bi-lightning-charge"></i></div>
+        <h6 class="fw-bold">Fotônica de Silício</h6><p class="small">Interconexões ópticas para datacenters acima de 1 Tb/s.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="destaques">
+  <div class="container">
+    <h2>Destaques 2025</h2>
+    <div class="row g-4">
+     
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://images.tcdn.com.br/img/img_prod/1159412/processador_intel_core_i9_14900k_6ghz_max_turbo_cache_36mb_24_nucleos_36_threads_c_video_s_cooler_lg_182582185_1_945fdd8a2e5678550d96b05f15ad0278.jpg" alt="Core i9">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Desktop</span><h5 class="fw-bold">Core™ i9-14900K</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-cpu me-1"></i>24c/32t · 6,0 GHz</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-i9">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://www.adrenaline.com.br/wp-content/uploads/2023/01/CHAMADA-INTEL27.jpg" alt="Xeon">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Data Center</span><h5 class="fw-bold">Xeon® w9-3495X</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-hdd-network me-1"></i>56 núcleos</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-w9">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/9/0/90-ga4vzz-00uanf.jpg" alt="Arc">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Gráficos</span><h5 class="fw-bold">Arc™ A770 16 GB</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-controller me-1"></i>Ray Tracing + XeSS</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-arc">Detalhes</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5rok1lYiKI41sUWkPW2s9Kz3ciMooLNOjzA&s" alt="Ultra">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mobile</span><h5 class="fw-bold">Core™ Ultra 7 165H</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-gpu-card me-1"></i>GPU Arc integrada</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-ultra">Detalhes</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://dlcdnwebimgs.asus.com/files/media/af7757a8-3559-4665-8727-9435de8c26e5/v1/features/images/large/1x/s1/main.jpg" alt="NUC">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mini PC</span><h5 class="fw-bold">NUC 13 Extreme</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-rulers me-1"></i>Formato 14 L</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-nuc">Detalhes</button>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-md-6 col-lg-4">
+        <div class="card prod-card h-100">
+          <img src="https://intelcorp.scene7.com/is/image/intelcorp/gaudi-g2-board-product-shot-rwd:1920-1080?wid=864&hei=486" alt="Gaudi">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">AI Accelerator</span><h5 class="fw-bold">Habana Gaudi2</h5>
+            <ul class="list-unstyled small mb-3"><li><i class="bi bi-graph-up-arrow me-1"></i>Treino GenAI</li></ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-toggle="modal" data-bs-target="#m-gaudi">Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:#fff;" id="logos">
+  <div class="container">
+    <h2>Ecossistema de Parceiros</h2>
+    <div class="d-flex align-items-center overflow-auto py-2 gap-5">
+      <img src="https://logo.clearbit.com/dell.com"       alt="Dell"     height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/lenovo.com"     alt="Lenovo"   height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/amazonaws.com"  alt="AWS"      height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/microsoft.com"  alt="Microsoft"height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/google.com"     alt="Google"   height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/asus.com"       alt="ASUS"     height="48" class="logo-item">
+      <img src="https://logo.clearbit.com/acer.com"       alt="Acer"     height="48" class="logo-item">
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <h2>Últimas Notícias</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <article class="card blog-card h-100">
+          <img src="https://www.adrenaline.com.br/wp-content/uploads/2024/06/intel-lunar-lake.jpg" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">Intel revela “Lunar Lake”</h5>
+            <p class="small mb-2">Nova microarquitetura mobile promete dobrar desempenho-Watt em IA.</p>
+            <a href="https://www.tecmundo.com.br/produto/284565-intel-anuncia-processadores-lunar-lake-nova-arquitetura-notebooks-poderosos-ia-jogos.htm" class="stretched-link small fw-semibold">Leia mais →</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="card blog-card h-100">
+          <img src="https://static.poder360.com.br/2025/03/intel-fabrica-ohio-848x477.jpg" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">Fábrica Ohio avança cronograma</h5>
+            <p class="small mb-2">Mega-site de US$ 20 bi inicia instalação de equipamentos em 2025.</p>
+            <a href="https://tecnoblog.net/noticias/intel-adia-mais-uma-vez-projeto-de-us-28-bilhoes-para-fabricar-chips/" class="stretched-link small fw-semibold">Leia mais →</a>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-4">
+        <article class="card blog-card h-100">
+          <img src="https://www.adrenaline.com.br/wp-content/uploads/2021/10/Destaque-Intel-Argonne-Aurora.jpg" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold">Projeto Aurora bate 2 ExaFLOPS</h5>
+            <p class="small mb-2">Supercomputador com GPUs Intel alcança topo do TOP500.</p>
+            <a href="https://tecnoblog.net/noticias/primeiro-supercomputador-com-desempenho-de-ate-2-exaflops-e-finalmente-instalado/" class="stretched-link small fw-semibold">Leia mais →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="parallax">
+  <div class="container position-relative" style="z-index:1">
+    <h3>Tecnologia que move o mundo</h3>
+    <img src="https://braziljournal.com/wp-content/uploads/2025/04/shutterstock_2535787849-857x482.jpg?x83830" alt="">
+    <p>De supercomputadores a dispositivos IoT, habilitamos experiências que definem gerações.</p>
+  </div>
+</div>
+ 
+
+<section id="team" style="background:#fff;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Equipe de Criação do Site</h2>
+
+    <div class="row g-4 justify-content-center">
+ 
+      <div class="col-6 col-md-3 text-center">
+        <img src="C:\Users\aluno\Downloads\WhatsApp Image 2025-06-11 at 16.38.14.jpeg" class="rounded-circle mb-3" alt="Anna Rosseto" width="140" height="140" loading="lazy">
+        <h6 class="fw-bold mb-1">Anna Beatriz</h6>
+     
+      </div>
+
+      
+      <div class="col-6 col-md-3 text-center">
+        <img src="C:\Users\aluno\Downloads\WhatsApp Image 2025-06-11 at 16.30.29.jpeg" class="rounded-circle mb-3" alt="Marina Costa" width="140" height="140" loading="lazy">
+        <h6 class="fw-bold mb-1">Beatriz Santos</h6>
+   
+      </div>
+
+     
+      <div class="col-6 col-md-3 text-center">
+        <img src="C:\Users\aluno\Downloads\WhatsApp Image 2025-06-11 at 16.32.23.jpeg" class="rounded-circle mb-3" alt="Carlos Mendes" width="140" height="140" loading="lazy">
+        <h6 class="fw-bold mb-1">Luiza Maciel</h6>
+    
+      </div>
+
+    
+      <div class="col-6 col-md-3 text-center">
+        <img src="C:\Users\aluno\Downloads\WhatsApp Image 2025-06-11 at 16.37.07.jpeg" class="rounded-circle mb-3" alt="Lucas" width="140" height="140" loading="lazy">
+        <h6 class="fw-bold mb-1">Lucas Fernandes</h6>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mt-5" style="background:#002d5b;color:#fff;">
+  <div class="container text-center py-4">
+    <p class="fw-semibold mb-2">© 2025 Intel Corporation</p>
+    <div>
+      <a href="https://www.intel.com" target="_blank" class="text-white text-decoration-none me-2">Site</a>
+      <a href="https://twitter.com/intel" target="_blank" class="text-white text-decoration-none me-2">Twitter</a>
+      <a href="https://linkedin.com/company/intel" target="_blank" class="text-white text-decoration-none">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+
+<button id="topBtn" class="btn btn-primary rounded-circle shadow"><i class="bi bi-chevron-up"></i></button>
+
+
+<div class="modal fade" id="m-i9" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Core™ i9-14900K</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">24 núcleos (8P+16E), 32 threads, boost de 6,0 GHz, suporte DDR5-5600 e PCIe 5.0.</div>
+</div></div></div>
+<div class="modal fade" id="m-w9" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Xeon® w9-3495X</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">56 núcleos/112 threads, até 4 TB DDR5 ECC, 112 lanes PCIe 5.0.</div>
+</div></div></div>
+<div class="modal fade" id="m-arc" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Arc™ A770</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">GPU 16 GB GDDR6, Ray Tracing, XeSS, ideal 1440p.</div>
+</div></div></div>
+<div class="modal fade" id="m-ultra" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Core™ Ultra 7 165H</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">20 threads, GPU Arc integrada, NPU para IA local, TDP 45 W.</div>
+</div></div></div>
+<div class="modal fade" id="m-nuc" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">NUC 13 Extreme</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">Chassi 14 L, Core i9 13900K, suporta GPU 350 W.</div>
+</div></div></div>
+<div class="modal fade" id="m-gaudi" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Habana Gaudi2</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">Acelerador IA com 96 GB HBM2e, pensado para treinamento GenAI em larga escala.</div>
+</div></div></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+  window.addEventListener('load',()=>setTimeout(()=>intro.classList.add('hide'),5500));
+
+  
+  const nav=document.querySelector('.navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('shrink',window.scrollY>80));
+
+  
+  const topBtn=document.getElementById('topBtn');
+  window.addEventListener('scroll',()=>topBtn.style.display=window.scrollY>450?'block':'none');
+  topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>

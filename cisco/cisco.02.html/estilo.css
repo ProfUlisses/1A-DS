@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f9fc;
+  color: #1a1a1a;
+}
+
+header {
+  background-color: #072b5c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  background-color: white;
+}
+
+.hero-texto h1 {
+  font-size: 2.8rem;
+  color: #072b5c;
+  margin-bottom: 1rem;
+}
+
+.hero-texto p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #d90000;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a60000;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+}
+
+footer {
+  background-color: #072b5c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+/* estilo.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f9fc;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #043763; /* Azul escuro Cisco */
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.ativo {
+  background-color: #e60000; /* vermelho Cisco */
+  color: #fff;
+}
+
+main.conteudo {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.cartao {
+  background-color: #fff;
+  border-left: 8px solid #e60000;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.cartao h2 {
+  color: #e60000;
+  margin-bottom: 1rem;
+}
+
+.cartao h3 {
+  color: #043763;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cartao ul {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.cartao ul li {
+  margin-bottom: 0.5rem;
+}
+
+.cartao img {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #043763;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f9fc;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #043763;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.ativo {
+  background-color: #e60000;
+  color: #fff;
+}
+
+main.conteudo {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.cartao {
+  background-color: #fff;
+  border-left: 8px solid #e60000;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+
+.cartao:hover {
+  transform: scale(1.01);
+}
+
+.cartao h2 {
+  color: #e60000;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.cartao h3 {
+  color: #043763;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cartao ul {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.cartao ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.imagem-produto {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #043763;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}

@@ -1,0 +1,29 @@
+.introducao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+div.introducao > div{
+    max-width: 450px;
+    min-width: 350px;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(150, 150, 150);
+    border: solid;
+    border-width: 3px;
+    border-color: white;
+}
+button.pesquisar{
+    width: 175px;
+    height: 50px;
+    font-size: 24px;
+    position: relative;
+    left: 30%;
+}
+p{
+    margin-left: 0;
+    margin-right: 0;
+}

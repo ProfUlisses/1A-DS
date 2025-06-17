@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intel – Produtos</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{--azul-prim:#0071c5;}
+    body{font-family:'Montserrat',sans-serif;background:#f0f4f9;}
+
+    .navbar{box-shadow:0 2px 8px rgba(0,0,0,.08);background:#fff!important;position:fixed;top:0;width:100%;z-index:100;}
+    .navbar-brand strong{font-size:1.8rem;color:var(--azul-prim);}
+    .nav-link{font-weight:600;color:#555!important;transition:.3s;}
+    .nav-link:hover,.nav-link.active{color:var(--azul-prim)!important;}
+
+    header{padding:11rem 0 4rem;text-align:center;background:linear-gradient(120deg,#005892,#0084d6);color:#fff;}
+
+    section{padding:5.5rem 0;}
+    .prod-card{border:none;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;transition:transform .25s;}
+    .prod-card:hover{transform:scale(1.03);}
+    .prod-card img{height:180px;object-fit:cover;}
+    .tag{display:inline-block;font-size:.75rem;font-weight:700;background:var(--azul-prim);color:#fff;padding:.25rem .6rem;border-radius:50px;}
+    .btn-details{border-radius:50px;font-weight:600;}
+
+    #filterBtns .btn{border-radius:50px;font-weight:600;}
+    #filterBtns .btn.active{background:var(--azul-prim);color:#fff;}
+
+    footer{background:#002d5b;color:#fff;padding:3rem 0;margin-top:4rem;}
+    footer a{color:#fff;text-decoration:none;margin:0 .5rem;font-size:1.1rem;}
+    footer a:hover{color:#99cfff;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><strong>Intel</strong></a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="historico.html">Histórico</a></li>
+        <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <h1 class="display-5 fw-bold">Portfólio Intel</h1>
+    <p class="lead mb-0">Processadores, gráficos, plataformas e muito mais.</p>
+  </div>
+</header>
+
+<!-- FILTRO -->
+<section class="pt-4">
+  <div class="container">
+    <div id="filterBtns" class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
+      <button class="btn btn-outline-primary" data-filter="desktop">Desktop</button>
+      <button class="btn btn-outline-primary" data-filter="mobile">Mobile</button>
+      <button class="btn btn-outline-primary" data-filter="datacenter">Data&nbsp;Center</button>
+      <button class="btn btn-outline-primary" data-filter="graphics">Gráficos</button>
+      <button class="btn btn-outline-primary" data-filter="nuc">Mini&nbsp;PC</button>
+      <button class="btn btn-outline-primary" data-filter="fpga">FPGA</button>
+    </div>
+
+    <div class="row g-4" id="prodGrid">
+      <!-- ==== DESKTOP CPUs ==== -->
+      <!-- i9 14900K -->
+      <div class="col-md-6 col-lg-4 product desktop">
+        <div class="card prod-card h-100">
+          <img src="https://images.tcdn.com.br/img/img_prod/1159412/processador_intel_core_i9_14900k_6ghz_max_turbo_cache_36mb_24_nucleos_36_threads_c_video_s_cooler_lg_182582185_1_945fdd8a2e5678550d96b05f15ad0278.jpg" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Desktop</span>
+            <h5 class="fw-bold">Core™ i9-14900K</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-cpu me-1"></i>24c/32t · 6.0 GHz</li>
+              <li><i class="bi bi-memory me-1"></i>DDR5-5600</li>
+              <li><i class="bi bi-pci-card me-1"></i>PCIe 5.0</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-i9" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- i7-14700K -->
+      <div class="col-md-6 col-lg-4 product desktop">
+        <div class="card prod-card h-100">
+          <img src="https://img.terabyteshop.com.br/archive/1081660063/HTML%20-%202.png" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Desktop</span>
+            <h5 class="fw-bold">Core™ i7-14700K</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-cpu me-1"></i>20c/28t · 5.6 GHz</li>
+              <li><i class="bi bi-gpu-card me-1"></i>UHD 770</li>
+              <li><i class="bi bi-thermometer me-1"></i>125 W TDP</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-i7" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== MOBILE ==== -->
+      <!-- Core Ultra 7 -->
+      <div class="col-md-6 col-lg-4 product mobile">
+        <div class="card prod-card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5rok1lYiKI41sUWkPW2s9Kz3ciMooLNOjzA&s" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mobile</span>
+            <h5 class="fw-bold">Core™ Ultra 7 165H</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-laptop me-1"></i>20 threads</li>
+              <li><i class="bi bi-gpu-card me-1"></i>Arc Xe GPU</li>
+              <li><i class="bi bi-cpu me-1"></i>NPU AI</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-ultra" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core i5-1340P -->
+      <div class="col-md-6 col-lg-4 product mobile">
+        <div class="card prod-card h-100">
+          <img src="https://versus-dot-com.imgix.net/imgixback.jpeg?blend=https://images.versus.io/objects/intel-core-i5-1340p.front.variety.1672857667110.jpg&blend-mode=multiply&blend-h=0.85&blend-x=350&mark64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0P3R4dDY0PVNXNTBaV3dnUTI5eVpTQnBOUzB4TXpRd1VBPT0mdHh0LWNvbG9yPWZmZmZmZmZmJnR4dC1mb250PUhlbHZldGljYSxib2xkJnR4dC1zaXplPTQwJnc9MzAw&mark-align=middle,left&mark-pad=30" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mobile</span>
+            <h5 class="fw-bold">Core™ i5-1340P</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-cpu me-1"></i>12c/16t · 4.6 GHz</li>
+              <li><i class="bi bi-battery me-1"></i>28 W TDP</li>
+              <li><i class="bi bi-arrows-angle-expand me-1"></i>Thin & Light</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-i5p" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== DATA CENTER ==== -->
+      <!-- Xeon Platinum -->
+      <div class="col-md-6 col-lg-4 product datacenter">
+        <div class="card prod-card h-100">
+          <img src="https://www.storagereview.com/wp-content/uploads/2024/01/StorageReview-Dell-PowerEdge-R760-CPU-4.jpg" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Data Center</span>
+            <h5 class="fw-bold">Xeon® Platinum 8592+</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-hdd-network me-1"></i>64c / 128t</li>
+              <li><i class="bi bi-graph-up me-1"></i>CXL 2.0</li>
+              <li><i class="bi bi-cloud-check me-1"></i>IA &amp; Segurança</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-xeon" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gaudi2 AI -->
+      <div class="col-md-6 col-lg-4 product datacenter">
+        <div class="card prod-card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvugZnEn98ROYHWvQ8hg3YE3Yqg4_g5aznbQ&s" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">AI Accelerator</span>
+            <h5 class="fw-bold">Habana Gaudi2</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-lightning me-1"></i>24 Tensor Eng.</li>
+              <li><i class="bi bi-ethernet me-1"></i>H-30G Links</li>
+              <li><i class="bi bi-graph-up-arrow me-1"></i>Training GenAI</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-gaudi" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== GRÁFICOS ==== -->
+      <!-- Arc A770 -->
+      <div class="col-md-6 col-lg-4 product graphics">
+        <div class="card prod-card h-100">
+          <img src="https://www.asrock.com/Graphics-Card/photo/Intel%20Arc%20A770%20Phantom%20Gaming%2016GB%20OC(M1).png" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Gráficos</span>
+            <h5 class="fw-bold">Arc™ A770 16 GB</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-gpu-card me-1"></i>16 GB GDDR6</li>
+              <li><i class="bi bi-controller me-1"></i>Ray Tracing</li>
+              <li><i class="bi bi-lightning me-1"></i>XeSS</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-arc" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arc A580 -->
+      <div class="col-md-6 col-lg-4 product graphics">
+        <div class="card prod-card h-100">
+          <img src="https://www.asrock.com/Graphics-Card/photo/Intel%20Arc%20A580%20Challenger%208GB%20OC(M1).png" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Gráficos</span>
+            <h5 class="fw-bold">Arc™ A580 8 GB</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-gpu-card me-1"></i>8 GB GDDR6</li>
+              <li><i class="bi bi-controller me-1"></i>1440p Gaming</li>
+              <li><i class="bi bi-hdd me-1"></i>AV1 Encode</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-a580" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== MINI PC ==== -->
+      <!-- NUC 13 Extreme -->
+      <div class="col-md-6 col-lg-4 product nuc">
+        <div class="card prod-card h-100">
+          <img src="https://dlcdnwebimgs.asus.com/files/media/af7757a8-3559-4665-8727-9435de8c26e5/v1/features/images/large/1x/s1/main.jpg" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mini PC</span>
+            <h5 class="fw-bold">NUC 13 Extreme</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-box-seam me-1"></i>Core i9-13900K</li>
+              <li><i class="bi bi-gpu-card me-1"></i>GPU 350 W</li>
+              <li><i class="bi bi-rulers me-1"></i>14 L chassis</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-nuc" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NUC 12 Pro -->
+      <div class="col-md-6 col-lg-4 product nuc">
+        <div class="card prod-card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0L16oLEiBEb1ll7qJRhB5xIEOaa3_Sx0qw&s" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">Mini PC</span>
+            <h5 class="fw-bold">NUC 12 Pro</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-cpu me-1"></i>Core i7-1260P</li>
+              <li><i class="bi bi-hdd me-1"></i>2× NVMe</li>
+              <li><i class="bi bi-arrows-angle-contract me-1"></i>4 × 4 ″ placa</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-nuc12" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==== FPGA ==== -->
+      <!-- Agilex -->
+      <div class="col-md-6 col-lg-4 product fpga">
+        <div class="card prod-card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdbjU01pp3RYe1DhLkmwpmnCKO-8tt6TodQ&s" alt="">
+          <div class="card-body d-flex flex-column">
+            <span class="tag mb-2">FPGA</span>
+            <h5 class="fw-bold">Agilex™ 7</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><i class="bi bi-bricks me-1"></i>Intel 7 node</li>
+              <li><i class="bi bi-plug me-1"></i>PCIe Gen5 x16</li>
+              <li><i class="bi bi-diagram-3 me-1"></i>eASIC overlay</li>
+            </ul>
+            <button class="btn btn-outline-primary mt-auto btn-details" data-bs-target="#m-fpga" data-bs-toggle="modal">Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= TODOS OS MODAIS (apenas os novos extras listados) ========= -->
+<!-- i7 Modal -->
+<div class="modal fade" id="m-i7" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Core™ i7-14700K</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">20 núcleos (8P+12E), 28 threads, até 5,6 GHz, ideal para criação e jogos AAA.</div>
+</div></div></div>
+
+<!-- i5P Modal -->
+<div class="modal fade" id="m-i5p" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Core™ i5-1340P</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">CPU de 28 W para ultrabooks: 12c/16t, GPU Iris Xe 80 EU, Thunderbolt 4 integrado.</div>
+</div></div></div>
+
+<!-- Gaudi Modal -->
+<div class="modal fade" id="m-gaudi" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Habana Gaudi2</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">Acelerador IA com 96 GB HBM2e, 24 Tensor Engines e escalonamento até 2048 chips.</div>
+</div></div></div>
+
+<!-- A580 Modal -->
+<div class="modal fade" id="m-a580" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">Arc™ A580</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">GPU com 512 EUs, 8 GB GDDR6, RT & XeSS, perfeita para e-sports em 1440p.</div>
+</div></div></div>
+
+<!-- NUC12 Modal -->
+<div class="modal fade" id="m-nuc12" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content border-0">
+  <div class="modal-header bg-primary text-white"><h5 class="modal-title">NUC 12 Pro</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+  <div class="modal-body">Mini PC de 4×4 ”, Core i7-1260P, Wi-Fi 6E, duas portas Thunderbolt 4 e vPro Enterprise.</div>
+</div></div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container text-center">
+    <p class="mb-2 fw-semibold">© 2025 Intel Corporation</p>
+    <div>
+      <a href="https://www.intel.com" target="_blank">Site</a>
+      <a href="https://twitter.com/intel" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/company/intel" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  /* filtro */
+  document.querySelectorAll('#filterBtns .btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelector('#filterBtns .active').classList.remove('active');
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      document.querySelectorAll('#prodGrid .product').forEach(p=>{
+        p.style.display=(f==='all'||p.classList.contains(f))?'block':'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: tec;
+  src: url(Font/classy_vogue/Classyvogueregular.ttf);
+}
+
+@font-face {
+  font-family: tec2;
+  src: url(Font/cinzel/Cinzel-Regular.otf);
+}
+
+@font-face {
+  font-family: tec3;
+  src: url(Font/mono_2/Mono\ Light.ttf);
+}
+
+body {
+  background: linear-gradient(to right, #1f1f1f, #000000);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px 90px 80px 90px;
+  margin: 0;
+}
+
+
+.navbar {
+  border-radius: 12px;
+  width: 100%;
+  background: linear-gradient(to right, #1f1f1f, #000000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px 5px 15px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #0096D6;
+  box-shadow: 0 2px 10px #0096D6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+.logo-navbar {
+  width: 60px;
+  height: auto;
+}
+
+.titulo-navbar {
+  color: #ffffff;
+  font-family: tec2;
+  padding: 10px 5px; 
+  transition: box-shadow 0.3s easy;
+  border-radius: 5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  
+a{
+
+ background: linear-gradient(to right, #1f1f1f, #000000);
+  padding: 10px 20px;
+  border: 1px solid #0096D6;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #0096D6;
+}
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: tec2;
+  font-weight: bold;
+  transition: color 0.3s;
+
+ 
+
+  
+
+  
+}
+
+.nav-links li a:hover {
+  color: #0096D6;
+  
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.fundador {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  font-family: tec;
+}
+
+.fundador img {
+  width: 250px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0096D6;
+}
+
+.fundador h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.fundador p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.fundador p strong {
+  color: #0096D6;
+}
+
+.fundador p em {
+  font-style: italic;
+}
+
